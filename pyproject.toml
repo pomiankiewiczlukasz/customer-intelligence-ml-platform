@@ -1,7 +1,7 @@
 [project]
 name = "customer-intelligence-ml-platform"
 version = "0.1.0"
-description = "Add your description here"
+description = "End-to-end Machine Learning platform for customer segmentation and churn prediction"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
