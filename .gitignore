@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.venv/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MLflow tracking data
+mlruns/
+
+# Trained models
+models/*.joblib
+models/*.pkl
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
