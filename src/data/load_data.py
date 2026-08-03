@@ -3,7 +3,9 @@ from pathlib import Path
 import pandas as pd
 
 
-DATA_PATH = Path("data/raw/telco_customer_churn.csv")
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+DATA_PATH = PROJECT_ROOT / "data" / "raw" / "telco_customer_churn.csv"
 
 
 def load_data() -> pd.DataFrame:
