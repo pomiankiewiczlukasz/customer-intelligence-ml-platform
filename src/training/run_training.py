@@ -6,6 +6,7 @@ from src.data.load_data import load_data
 from src.features.preprocessing import preprocess_data
 from src.training.train import train_model
 from src.evaluation.evaluate import evaluate_model
+from src.models.save_model import save_model
 
 
 def run_training(
@@ -71,5 +72,7 @@ def run_training(
         X_test=X_test,
         y_test=y_test,
     )
+
+    save_model(model)
 
     return model, metrics
