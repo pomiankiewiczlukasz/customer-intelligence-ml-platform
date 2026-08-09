@@ -1,22 +1,18 @@
-from pathlib import Path
-
-import joblib
+import mlflow
 from sklearn.pipeline import Pipeline
 
-
-MODEL_PATH = Path("models/churn_model.pkl")
+MODEL_NAME = "customer-churn-model"
+MODEL_VERSION = "1"
 
 
 def load_model(
-    path: Path = MODEL_PATH,
+    model_name: str = MODEL_NAME,
+    model_version: str = MODEL_VERSION,
 ) -> Pipeline:
     """
-    Load trained ML pipeline.
+    Load a trained ML pipeline from MLflow Model Registry.
     """
 
-    if not path.exists():
-        raise FileNotFoundError(
-            f"Model not found: {path}"
-        )
+    model_uri = f"models:/{model_name}/{model_version}"
 
-    return joblib.load(path)
+    return mlflow.sklearn.load_model(model_uri)
