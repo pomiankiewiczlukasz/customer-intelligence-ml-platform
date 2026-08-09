@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import pandas as pd
-
 from sklearn.pipeline import Pipeline
 
 from src.pipelines.churn_pipeline import create_pipeline

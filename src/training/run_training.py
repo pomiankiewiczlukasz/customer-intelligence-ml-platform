@@ -3,10 +3,10 @@ from __future__ import annotations
 from sklearn.model_selection import train_test_split
 
 from src.data.load_data import load_data
-from src.features.preprocessing import preprocess_data
-from src.training.train import train_model
 from src.evaluation.evaluate import evaluate_model
+from src.features.preprocessing import preprocess_data
 from src.models.save_model import save_model
+from src.training.train import train_model
 
 
 def run_training(

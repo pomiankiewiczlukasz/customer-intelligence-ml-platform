@@ -1,8 +1,8 @@
 from __future__ import annotations
 
-from sklearn.pipeline import Pipeline
-from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import Pipeline
 
 from src.features.encoding import create_preprocessor
 

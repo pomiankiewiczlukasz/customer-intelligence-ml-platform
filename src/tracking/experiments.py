@@ -1,10 +1,6 @@
-from pathlib import Path
 import json
-from datetime import datetime
-
-
+from datetime import UTC, datetime
 from pathlib import Path
-
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -25,7 +21,7 @@ def save_experiment(
     """
 
     experiment = {
-        "timestamp": datetime.now().isoformat(),
+        "timestamp": datetime.now(UTC).isoformat(),
         "model": model_name,
         "params": params,
         "metrics": metrics,

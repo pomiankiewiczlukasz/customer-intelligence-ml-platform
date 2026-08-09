@@ -2,7 +2,6 @@ from pathlib import Path
 
 import requests
 
-
 DATASET_URL = (
     "https://raw.githubusercontent.com/treselle-systems/"
     "customer_churn_analysis/master/WA_Fn-UseC_-Telco-Customer-Churn.csv"

@@ -1,15 +1,14 @@
 from __future__ import annotations
 
 import pandas as pd
-
-from sklearn.pipeline import Pipeline
 from sklearn.metrics import (
     accuracy_score,
+    f1_score,
     precision_score,
     recall_score,
-    f1_score,
     roc_auc_score,
 )
+from sklearn.pipeline import Pipeline
 
 
 def evaluate_model(

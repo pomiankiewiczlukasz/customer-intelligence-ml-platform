@@ -3,7 +3,6 @@ from pathlib import Path
 import joblib
 from sklearn.pipeline import Pipeline
 
-
 MODEL_DIR = Path("models")
 MODEL_PATH = MODEL_DIR / "churn_model.pkl"
 
