@@ -1,3 +1,5 @@
+import os
+
 import mlflow
 from sklearn.pipeline import Pipeline
 
@@ -12,6 +14,11 @@ def load_model(
     """
     Load a trained ML pipeline from MLflow Model Registry.
     """
+
+    tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
+
+    if tracking_uri:
+        mlflow.set_tracking_uri(tracking_uri)
 
     model_uri = f"models:/{model_name}/{model_version}"
 
