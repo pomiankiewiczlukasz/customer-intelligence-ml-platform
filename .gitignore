@@ -16,6 +16,7 @@ dist/
 
 # MLflow tracking data
 mlruns/
+mlflow.db
 
 # Trained models
 models/*.joblib
