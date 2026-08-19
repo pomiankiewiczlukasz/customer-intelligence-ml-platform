@@ -61,11 +61,26 @@ def test_profile_segments_returns_expected_metrics():
 
     assert list(profile["segment"]) == [0, 1]
     assert list(profile["customers"]) == [2, 2]
-    assert profile.loc[profile["segment"] == 0, "churn_rate"].iloc[0] == 0.5
-    assert profile.loc[profile["segment"] == 1, "churn_rate"].iloc[0] == 0.5
+
+    assert (
+        profile.loc[
+            profile["segment"] == 0,
+            "churn_rate",
+        ].iloc[0]
+        == 0.5
+    )
+
+    assert (
+        profile.loc[
+            profile["segment"] == 1,
+            "churn_rate",
+        ].iloc[0]
+        == 0.5
+    )
 
     expected_columns = {
         "segment",
+        "segment_name",
         "customers",
         "churn_rate",
         "avg_tenure",
@@ -74,3 +89,8 @@ def test_profile_segments_returns_expected_metrics():
     }
 
     assert set(profile.columns) == expected_columns
+
+    assert list(profile["segment_name"]) == [
+        "Loyal High-Value",
+        "New At-Risk",
+    ]

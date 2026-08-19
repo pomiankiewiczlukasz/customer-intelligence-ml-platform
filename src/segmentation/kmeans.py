@@ -158,9 +158,10 @@ def run_segmentation(
     )
 
     mlflow.sklearn.log_model(
-        model,
-        name="kmeans_model",
-        skops_trusted_types=["numpy.dtype"],
+    model,
+    name="kmeans_model",
+    registered_model_name="customer-segmentation-model",
+    skops_trusted_types=["numpy.dtype"],
     )
 
     return (

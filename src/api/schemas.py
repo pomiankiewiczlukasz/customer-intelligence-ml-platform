@@ -21,3 +21,17 @@ class CustomerData(BaseModel):
     PaymentMethod: str
     MonthlyCharges: float
     TotalCharges: float
+
+
+class PredictionFactor(BaseModel):
+    feature: str
+    impact: str
+    shap_value: float
+
+
+class PredictionResponse(BaseModel):
+    churn_prediction: int
+    churn_probability: float
+    segment: int
+    segment_name: str
+    top_factors: list[PredictionFactor]

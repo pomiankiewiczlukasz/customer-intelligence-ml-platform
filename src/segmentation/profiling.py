@@ -2,10 +2,20 @@ from __future__ import annotations
 
 import pandas as pd
 
+SEGMENT_NAMES = {
+    0: "Loyal High-Value",
+    1: "New At-Risk",
+    2: "Established At-Risk",
+    3: "Low-Cost Stable",
+}
+
 
 def profile_segments(df: pd.DataFrame) -> pd.DataFrame:
     """
     Build a business-oriented profile for each customer segment.
+
+    Segment names are interpretive labels assigned after analysing
+    the characteristics and churn behaviour of each cluster.
     """
 
     profile = (
@@ -23,4 +33,18 @@ def profile_segments(df: pd.DataFrame) -> pd.DataFrame:
         .reset_index()
     )
 
-    return profile
+    profile["segment_name"] = (
+        profile["segment"].map(SEGMENT_NAMES)
+    )
+
+    return profile[
+        [
+            "segment",
+            "segment_name",
+            "customers",
+            "churn_rate",
+            "avg_tenure",
+            "avg_monthly_charges",
+            "avg_total_charges",
+        ]
+    ]
